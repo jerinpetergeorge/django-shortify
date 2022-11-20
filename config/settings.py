@@ -34,10 +34,10 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     "django.contrib.sites",
     # Third-party
+    "whitenoise.runserver_nostatic",
     "allauth",
     "allauth.account",
     "crispy_forms",
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # Local
     "accounts",
     "pages",
+    "shortify",
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
@@ -87,7 +88,6 @@ TEMPLATES = [
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {"default": env.db()}
-
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
@@ -133,7 +133,6 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # http://whitenoise.evans.io/en/stable/django.html#add-compression-and-caching-support
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-
 # django-crispy-forms
 # https://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
 CRISPY_TEMPLATE_PACK = "bootstrap4"
@@ -176,3 +175,6 @@ ACCOUNT_UNIQUE_EMAIL = True
 DEV_EMAIL = env("DEV_EMAIL")
 DEV_PASSWORD = env("DEV_PASSWORD")
 DEV_FULL_NAME = env("DEV_FULL_NAME")
+
+# Shortify Settings
+SHORTIFY_SLUG_LENGTH = env("SHORTIFY_SLUG_LENGTH", default=6)
