@@ -42,6 +42,7 @@ django==4.1.1
     #   crispy-bootstrap5
     #   django-allauth
     #   django-debug-toolbar
+    #   django-extensions
 django-allauth==0.51.0
     # via -r requirements/base.txt
 django-crispy-forms==1.14.0
@@ -52,6 +53,8 @@ django-debug-toolbar==3.2.4
     # via -r requirements/dev.txt
 django-environ==0.9.0
     # via -r requirements/base.txt
+django-extensions==3.2.1
+    # via -r requirements/dev.txt
 exceptiongroup==1.0.4
     # via pytest
 executing==1.2.0
